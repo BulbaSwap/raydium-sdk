@@ -46,7 +46,7 @@ export const DEVNET_PROGRAM_ID: ProgramId = {
   FarmV5: new PublicKey('EcLzTrNg9V7qhcdyXDe2qjtPkiGzDM2UbdRaeaadU5r2'),
   FarmV6: new PublicKey('Farm2hJLcqPtPg8M4rR6DMrsRNc5TPm5Cs4bVQrMe2T7'),
 
-  AmmV4: new PublicKey('HWy1jotHpo6UqeQxx49dpYYdQB8wj9Qk9MdxwjLvDHB8'),
+  AmmV4: new PublicKey('baskUiPSS8Tv3fvCdYKmBfwgwK3Vbkr8KDCCET3KjSv'),
   AmmStable: new PublicKey('DDg4VmQaJV9ogWce7LpcjBA9bv22wRp5uaTPa5pGjijF'),
 
   CLMM: new PublicKey('devi51mZmdwUJGU9hjN27vEz64Gps7uUefqxg27EAtH'),

@@ -13,7 +13,7 @@
     "require": "./lib/cjs/index.js",
     "import": "./lib/esm/index.js"
   },
-  "repository": "https://github.com/raydium-io/raydium-sdk",
+  "repository": "https://github.com/BTCLTC/raydium-sdk",
   "keywords": [
     "raydium",
     "solana"

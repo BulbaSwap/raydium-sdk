@@ -135,7 +135,9 @@ export class MarketV2 extends Base {
       innerTransactions: await splitTxAndSigners({
         connection,
         makeTxVersion,
-        computeBudgetConfig: undefined,
+        computeBudgetConfig: {
+          microLamports: 100000,
+        },
         payer: wallet,
         innerTransaction: ins.innerTransactions,
         lookupTableCache,

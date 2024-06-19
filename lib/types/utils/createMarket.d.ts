@@ -1,6 +1,6 @@
 import { Connection, PublicKey, TransactionInstruction } from '@solana/web3.js';
 import BN from 'bn.js';
-import { Base, InstructionType, TxVersion } from '../base';
+import { Base, ComputeBudgetConfig, InstructionType, TxVersion } from '../base';
 import { CacheLTA } from '../common';
 export declare const MARKET_STATE_LAYOUT_V2: import("../marshmallow").Structure<any, "", {
     [x: string]: any;
@@ -8,7 +8,7 @@ export declare const MARKET_STATE_LAYOUT_V2: import("../marshmallow").Structure<
 export declare class MarketV2 extends Base {
     static makeCreateMarketInstructionSimple<T extends TxVersion>({ connection, wallet, baseInfo, quoteInfo, lotSize, // 1
     tickSize, // 0.01
-    dexProgramId, makeTxVersion, lookupTableCache, }: {
+    dexProgramId, makeTxVersion, lookupTableCache, computeBudgetConfig, }: {
         makeTxVersion: T;
         lookupTableCache?: CacheLTA;
         connection: Connection;
@@ -24,6 +24,7 @@ export declare class MarketV2 extends Base {
         lotSize: number;
         tickSize: number;
         dexProgramId: PublicKey;
+        computeBudgetConfig?: ComputeBudgetConfig;
     }): Promise<{
         address: {
             marketId: PublicKey;

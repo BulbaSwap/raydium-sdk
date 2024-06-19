@@ -195,12 +195,6 @@ export class MarketV2 extends Base {
         space: 165,
         programId: TOKEN_PROGRAM_ID,
       }),
-      createInitializeAccountInstruction(marketInfo.baseVault.publicKey, marketInfo.baseMint, marketInfo.vaultOwner),
-      createInitializeAccountInstruction(marketInfo.quoteVault.publicKey, marketInfo.quoteMint, marketInfo.vaultOwner),
-    )
-
-    const ins2: TransactionInstruction[] = []
-    ins2.push(
       SystemProgram.createAccountWithSeed({
         fromPubkey: wallet,
         basePubkey: wallet,
@@ -246,6 +240,12 @@ export class MarketV2 extends Base {
         space: 14524,
         programId: marketInfo.programId,
       }),
+      createInitializeAccountInstruction(marketInfo.baseVault.publicKey, marketInfo.baseMint, marketInfo.vaultOwner),
+      createInitializeAccountInstruction(marketInfo.quoteVault.publicKey, marketInfo.quoteMint, marketInfo.vaultOwner),
+    )
+
+    const ins2: TransactionInstruction[] = []
+    ins2.push(
       this.initializeMarketInstruction({
         programId: marketInfo.programId,
         marketInfo: {
@@ -287,6 +287,11 @@ export class MarketV2 extends Base {
           instructionTypes: [
             InstructionType.createAccount,
             InstructionType.createAccount,
+            InstructionType.createAccount,
+            InstructionType.createAccount,
+            InstructionType.createAccount,
+            InstructionType.createAccount,
+            InstructionType.createAccount,
             InstructionType.initAccount,
             InstructionType.initAccount,
           ],
@@ -295,11 +300,6 @@ export class MarketV2 extends Base {
           instructions: ins2,
           signers: [],
           instructionTypes: [
-            InstructionType.createAccount,
-            InstructionType.createAccount,
-            InstructionType.createAccount,
-            InstructionType.createAccount,
-            InstructionType.createAccount,
             InstructionType.initMarket,
           ],
         },

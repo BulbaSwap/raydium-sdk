@@ -22,6 +22,7 @@
       "yarn lint"
     ]
   },
+  "private": false,
   "scripts": {
     "lint": "eslint src/**/*.ts",
     "test": "jest",
